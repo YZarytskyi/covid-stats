@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import Header from './components/Header/Header';
+import TableCountries from './components/TableCountries/TableCountries';
+import { covidApi } from './api/covidApi';
+import { ICountry } from './types/types';
 
 function App() {
+  const [countries, setCountries] = useState<ICountry[]>([]);
+
+  useEffect(() => {
+    const getInfo = async () => {
+      const data = await covidApi.getSummary();
+      setCountries(data);
+    };
+    getInfo();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <main className="container">
+        <TableCountries countries={countries} />
+      </main>
     </div>
   );
 }
