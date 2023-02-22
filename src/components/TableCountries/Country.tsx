@@ -13,6 +13,7 @@ const Country: FC<CountryProps> = ({ item }) => {
 
   const onClickShowDetails = () => {
     setShowModal(true);
+    document.body.classList.add('hidden')
   };
 
   return (

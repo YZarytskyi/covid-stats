@@ -46,6 +46,10 @@ body {
   }
 }
 
+.hidden {
+  overflow: hidden;
+}
+
 *,
 *::before,
 *::after {

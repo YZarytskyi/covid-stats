@@ -28,6 +28,7 @@ const ModalDetails: FC<ModalDetailsProps> = ({
   function onPressEsc(e: KeyboardEvent) {
     if (e.code === 'Escape') {
       setShowModal(false);
+      document.body.classList.remove('hidden');
     }
   }
 
@@ -36,16 +37,14 @@ const ModalDetails: FC<ModalDetailsProps> = ({
   ) {
     if (e.target === e.currentTarget) {
       setShowModal(false);
+      document.body.classList.remove('hidden');
     }
   }
 
-  if (!showModal) return null
+  if (!showModal) return null;
 
   return createPortal(
-    <div
-      className={style.backdrop}
-      onClick={onClickCloseModal}
-    >
+    <div className={style.backdrop} onClick={onClickCloseModal}>
       <div className={style.modal}>
         <h1 className={style.title}>{country}</h1>
         <div className={style.row}>

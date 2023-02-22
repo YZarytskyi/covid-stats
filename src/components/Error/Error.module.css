@@ -10,6 +10,7 @@
 .error {
   padding: 10px 30px;
   color: red;
+  text-align: center;
   border-radius: 5px;
   border: 1px solid red;
 }
