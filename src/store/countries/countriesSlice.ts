@@ -4,7 +4,7 @@ import { ICountry } from 'types';
 import { RootState } from '../store';
 import { PER_PAGE } from 'constants/constants';
 
-interface InitialState {
+export interface CountriesInitialState {
   countries: ICountry[];
   query: string;
   page: number;
@@ -12,7 +12,7 @@ interface InitialState {
   error: null | Error;
 }
 
-const initialState: InitialState = {
+const initialState: CountriesInitialState = {
   countries: [],
   query: '',
   page: 1,

@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import { ICountry } from 'types';
-import ModalDetails from '../ModalDetails/ModalDetails';
+import ModalDetails from '../../ModalDetails/ModalDetails';
 
 interface CountryProps {
   item: ICountry;
@@ -18,7 +18,7 @@ const Country: FC<CountryProps> = ({ item }) => {
 
   return (
     <>
-      <tr role="button" onClick={onClickShowDetails}>
+      <tr onClick={onClickShowDetails}>
         <td>{Index + 1}</td>
         <td>{Country}</td>
         <td>{TotalConfirmed}</td>

@@ -8,7 +8,7 @@ import {
   sortByNames,
 } from 'store/countries/countriesSlice';
 import { PER_PAGE } from '../../constants/constants';
-import Country from './Country';
+import Country from './Country/Country';
 import Error from '../Error/Error';
 import Spinner from '../Spinner/Spinner';
 import sprite from 'assets/icons.svg';
