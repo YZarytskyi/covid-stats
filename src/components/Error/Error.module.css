@@ -1,0 +1,27 @@
+.errorContainer {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.error {
+  padding: 10px 30px;
+  color: red;
+  border-radius: 5px;
+  border: 1px solid red;
+}
+
+.reloadBtn {
+  display: block;
+  min-width: 171px;
+  padding: 11px 20px;
+  background: #2196f3;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: calc(28 / 24);
+  color: #ffffff;
+}

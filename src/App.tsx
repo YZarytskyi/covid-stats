@@ -1,27 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import Header from './components/Header/Header';
-import TableCountries from './components/TableCountries/TableCountries';
-import { covidApi } from './api/covidApi';
-import { ICountry } from './types/types';
+import React, { useEffect } from 'react';
+import Header from 'components/Header/Header';
+import TableCountries from 'components/TableCountries/TableCountries';
+import { useAppDispatch } from 'hooks/redux-hooks';
+import { fetchCountries } from 'store/countries/countriesThunks';
 
 function App() {
-  const [countries, setCountries] = useState<ICountry[]>([]);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    const getInfo = async () => {
-      const data = await covidApi.getSummary();
-      setCountries(data);
-    };
-    getInfo();
+    dispatch(fetchCountries());
   }, []);
 
   return (
-    <div className="App">
+    <>
       <Header />
       <main className="container">
-        <TableCountries countries={countries} />
+        <TableCountries />
       </main>
-    </div>
+    </>
   );
 }
 

@@ -12,12 +12,12 @@
 
 
 .modal {
-  min-width: 600px;
+  width: 95%;
   padding: 20px;
   background-color: #ffffff;
   border-radius: 20px;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 21px;
   line-height: calc(28 / 24);
   color: #666666;
 }
@@ -26,13 +26,13 @@
   margin-bottom: 37px;
   text-align: center;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 34px;
   line-height: calc(56 / 48);
   color: #000000;
 }
 
 .row {
-  margin-bottom: 46px;
+  margin-bottom: 26px;
   display: flex;
   align-items: center;
 }
@@ -44,13 +44,13 @@
 .icon {
   width: 30px;
   height: 30px;
-  margin-right: 29px;
+  margin-right: 15px;
 }
 
 .recoverIcon {
   width: 22.5px;
   height: 30px;
-  margin-right: 32.5px;
+  margin-right: 18.5px;
 }
 
 .text {
@@ -68,4 +68,35 @@
   font-size: 24px;
   line-height: calc(28 / 24);
   color: #ffffff;
+}
+
+
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 600px;
+    width: none;
+    padding: 20px;
+    font-size: 24px;
+  }
+  
+  .title {
+    margin-bottom: 37px;
+    font-size: 48px;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 29px;
+  }
+  
+  .row {
+    margin-bottom: 46px;
+  }
+
+  .recoverIcon {
+    width: 22.5px;
+    height: 30px;
+    margin-right: 32.5px;
+  }
 }

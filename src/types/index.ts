@@ -1,3 +1,4 @@
+import { RootState } from '../store/store';
 export interface ICountry {
   ID: string;
   Country: string;
@@ -10,6 +11,7 @@ export interface ICountry {
   NewRecovered: number;
   TotalRecovered: number;
   Date: string;
+  Index: number;
 }
 
 export interface IGlobal {

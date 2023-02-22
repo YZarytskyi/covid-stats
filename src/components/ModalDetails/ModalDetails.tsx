@@ -1,6 +1,6 @@
 import { FC, Dispatch, SetStateAction, MouseEvent, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import sprite from '../../assets/icons.svg';
+import sprite from 'assets/icons.svg';
 import style from './ModalDetails.module.css';
 
 interface ModalDetailsProps {

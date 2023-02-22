@@ -1,11 +1,12 @@
 .inputContainer {
   position: relative;
+  min-width: 50%;
 }
 
 .searchInput {
-  min-width: 600px;
-  padding: 12px 32px;
-  font-size: 48px;
+  width: 100%;
+  padding: 10px 25px;
+  font-size: 20px;
   line-height: calc(56 / 48);
   font-weight: 400;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
@@ -18,8 +19,39 @@
 
 .searchIcon {
   position: absolute;
-  top: 28px;
+  top: 50%;
   right: 24px;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+}
+
+@media screen and (min-width: 768px) {
+  .inputContainer {
+    width: 400px;
+  }
+  .searchInput {
+    padding: 11px 28px;
+    font-size: 30px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  }
+  .searchIcon {
+    position: absolute;
+    right: 24px;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .inputContainer {
+    width: 600px;
+  }
+  .searchInput {
+    padding: 12px 32px;
+    font-size: 48px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  }
 }

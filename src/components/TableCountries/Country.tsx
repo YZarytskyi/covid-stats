@@ -1,13 +1,14 @@
 import { FC, useState } from 'react';
-import { ICountry } from '../../types/types';
+import { ICountry } from 'types';
 import ModalDetails from '../ModalDetails/ModalDetails';
 
 interface CountryProps {
   item: ICountry;
-  index: number;
 }
 
-const Country: FC<CountryProps> = ({ item, index }) => {
+const Country: FC<CountryProps> = ({ item }) => {
+  const { Index, Country, TotalConfirmed, TotalDeaths, TotalRecovered } = item;
+
   const [showModal, setShowModal] = useState(false);
 
   const onClickShowDetails = () => {
@@ -17,17 +18,17 @@ const Country: FC<CountryProps> = ({ item, index }) => {
   return (
     <>
       <tr role="button" onClick={onClickShowDetails}>
-        <td>{index + 1}</td>
-        <td>{item.Country}</td>
-        <td>{item.TotalConfirmed}</td>
+        <td>{Index + 1}</td>
+        <td>{Country}</td>
+        <td>{TotalConfirmed}</td>
       </tr>
       <ModalDetails
         showModal={showModal}
         setShowModal={setShowModal}
-        country={item.Country}
-        confirmed={item.TotalConfirmed}
-        deaths={item.TotalDeaths}
-        recovered={item.TotalRecovered}
+        country={Country}
+        confirmed={TotalConfirmed}
+        deaths={TotalDeaths}
+        recovered={TotalRecovered}
       />
     </>
   );
