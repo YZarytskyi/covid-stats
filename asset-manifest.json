@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/codempire-covid-stats/static/css/main.38a1fed0.css",
+    "main.js": "/codempire-covid-stats/static/js/main.47e7b691.js",
+    "static/media/logo.jpg": "/codempire-covid-stats/static/media/logo.5ae9685197413e655abb.jpg",
+    "static/media/icons.svg": "/codempire-covid-stats/static/media/icons.71a65dede9ccdcffb33b21deb9ed2d3b.svg",
+    "index.html": "/codempire-covid-stats/index.html",
+    "main.38a1fed0.css.map": "/codempire-covid-stats/static/css/main.38a1fed0.css.map",
+    "main.47e7b691.js.map": "/codempire-covid-stats/static/js/main.47e7b691.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.38a1fed0.css",
+    "static/js/main.47e7b691.js"
+  ]
+}
