@@ -36,7 +36,6 @@ const TableCountries = () => {
 
   const onClickPageChange = (page: number) => {
     dispatch(setPage(page));
-    console.log(page);
   };
 
   if (error) {
@@ -76,25 +75,23 @@ const TableCountries = () => {
           </tr>
         </thead>
         <tbody>
-          {filteredCountries.map((item) => (
+          {filteredCountries.map(item => (
             <Country key={item.ID} item={item} />
           ))}
         </tbody>
       </table>
       {filteredCountriesLength > PER_PAGE ? (
-        <div className={style.pagination}>
+        <div className={style.pagination} data-testid="pagination">
           <PaginationControl
             page={page}
-            between={4}
+            between={3}
             total={filteredCountriesLength}
             limit={PER_PAGE}
             changePage={onClickPageChange}
             ellipsis={1}
           />
         </div>
-      ) : (
-        ''
-      )}
+      ) : null}
     </>
   );
 };

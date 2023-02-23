@@ -1,11 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import SearchInput from './SearchInput';
-import { Provider } from 'react-redux';
-import configureStore from 'redux-mock-store';
-import { RootState } from '../../store/store';
+import { RootState } from 'store/store';
+import { renderWithProviders } from 'utils/test-utils';
 
 describe('SearchInput', () => {
-  const initialState: RootState = {
+  const preloadedState: RootState = {
     countries: {
       countries: [],
       query: '',
@@ -15,18 +15,21 @@ describe('SearchInput', () => {
     },
   };
 
-  const mockStore = configureStore();
-  let store;
-
-  test('should display title', () => {
-    store = mockStore(initialState);
-    render(
-      <Provider store={store}>
-        <SearchInput />
-      </Provider>
-    );
+  test('should display input', () => {
+    renderWithProviders(<SearchInput />, {
+      preloadedState,
+    });
 
     const input = screen.getByPlaceholderText('Search...');
     expect(input).toBeInTheDocument();
+  });
+
+  test('should display Ukraine in input', async () => {
+    renderWithProviders(<SearchInput />, {
+      preloadedState,
+    });
+
+    userEvent.type(screen.getByPlaceholderText('Search...'), 'Ukraine');
+    expect(await screen.findByDisplayValue('Ukraine')).toBeInTheDocument();
   });
 });

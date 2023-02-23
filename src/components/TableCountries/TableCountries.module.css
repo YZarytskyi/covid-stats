@@ -79,17 +79,18 @@
 }
 
 .pagination {
-  margin: 0 auto;
   margin-top: 25px;
   padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (min-width: 390px) {
   .table thead th:nth-child(1) {
-    width: 8%;
+    width: 10%;
   }
   .table thead th:nth-child(2) {
-    width: 52%;
+    width: 50%;
   }
   .table thead th:nth-child(3) {
     width: 40%;

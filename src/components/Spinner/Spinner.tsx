@@ -4,7 +4,7 @@ import style from './Spinner.module.css';
 
 const Spinner = () => {
   return createPortal(
-    <div className={style.container}>
+    <div className={style.container} data-testid='spinner'>
       <Dna
         visible={true}
         height="100"
