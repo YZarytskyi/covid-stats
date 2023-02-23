@@ -1,6 +1,6 @@
-import sprite from '../../assets/icons.svg';
-import { useAppDispatch, useAppSelector } from '../../hooks/redux-hooks';
-import { setQuery } from '../../store/countries/countriesSlice';
+import sprite from 'assets/icons.svg';
+import { useAppDispatch, useAppSelector } from 'hooks/redux-hooks';
+import { setQuery } from 'store/countries/countriesSlice';
 import style from './SearchInput.module.css';
 
 const SearchInput = () => {

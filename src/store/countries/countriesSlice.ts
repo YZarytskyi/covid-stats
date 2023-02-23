@@ -64,10 +64,6 @@ export const countriesSlice = createSlice({
   },
 });
 
-export const { setQuery, sortByNames, sortByConfirmed, setPage } =
-  countriesSlice.actions;
-export const countriesReducer = countriesSlice.reducer;
-
 const countries = (state: RootState) => state.countries.countries;
 const page = (state: RootState) => state.countries.page;
 const query = (state: RootState) =>
@@ -79,7 +75,7 @@ export const selectFilteredCountries = createSelector(
     const firstItemIndex = (page - 1) * PER_PAGE;
     const lastItemIndex = page * PER_PAGE;
     const filteredByQuery = countries
-      .filter(item => item.Country.toLowerCase().includes(query))
+      .filter(item => item.Country.toLowerCase().startsWith(query))
       .map((item, index) => ({ ...item, Index: index }));
     const filteredCountries = filteredByQuery.slice(
       firstItemIndex,
@@ -89,3 +85,7 @@ export const selectFilteredCountries = createSelector(
     return { filteredCountries, filteredCountriesLength };
   }
 );
+
+export const { setQuery, sortByNames, sortByConfirmed, setPage } =
+  countriesSlice.actions;
+export const countriesReducer = countriesSlice.reducer;
